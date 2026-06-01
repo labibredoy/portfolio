@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thesis: IDS Research | Md. Abdulla-Al-Labib</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="cyber-theme-dark">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hologram-scanline"></div>
+
+    <header class="main-header glass-card">
+        <div class="header-container">
+            <a href="../index.html" class="logo-text">
+                <span class="neon-purple">&lt;</span>labib<span class="neon-teal">/&gt;</span>
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="../index.html#research" class="nav-link">// research</a></li>
+                    <li><a href="../index.html#contact" class="nav-link">// contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-wrapper detail-page">
+        <a href="../index.html#research" class="detail-back">← back_to_home</a>
+
+        <span class="detail-status detail-status--wip">THESIS — IN PROGRESS</span>
+        <div class="detail-hero">
+            <div class="project-tags">
+                <span class="tag emerald">UNDERGRADUATE THESIS</span>
+                <span class="tag purple">IDS / IoT / AI</span>
+            </div>
+            <h1 class="detail-title neon-glow-text">Thesis: Intrusion Detection for IoT Networks Using Intelligent &amp; Hybrid Approaches</h1>
+            <p class="detail-lead">Ongoing thesis extending the published IEEE-style review on <em>Intrusion Detection Systems in the Era of IoT and AI</em>—from literature synthesis toward original experiments on modern IoT intrusion benchmarks, deep learning detectors, and hybrid blockchain-aware designs for real-time, resource-constrained deployments.</p>
+        </div>
+
+        <div class="detail-panel glass-card">
+            <h2>&gt; ALIGNMENT WITH REVIEW PAPER</h2>
+            <p>The review maps the evolution from traditional NIDS/HIDS to ML-, DL-, and blockchain-grounded IDS, emphasizing datasets (NSL-KDD, UNSW-NB15, CIC-IDS, CICIoT2023, Edge-IIoTset), class imbalance, concept drift, adversarial evasion, and federated edge deployment. The thesis targets identified gaps: lightweight models for IIoT, explainability, and hybrid DL + blockchain architectures with practical latency targets.</p>
+        </div>
+
+        <div class="detail-panel glass-card">
+            <h2>&gt; PLANNED RESEARCH PIPELINE</h2>
+            <ul>
+                <li>Problem formulation from taxonomy and comparative tables in the review (Sections II–VII)</li>
+                <li>Dataset preprocessing on CIC-IDS / CICIoT / Edge-IIoT style flows with reproducible splits</li>
+                <li>Baseline classifiers (RF, XGBoost) vs. CNN / BiLSTM / hybrid stacks cited in literature</li>
+                <li>Evaluation: accuracy, F1, detection rate, false alarm rate, inference time on edge profiles</li>
+                <li>Exploration of blockchain-inspired integrity or federated training where feasible</li>
+            </ul>
+        </div>
+
+        <div class="detail-panel glass-card">
+            <h2>&gt; CURRENT STATUS</h2>
+            <p>Comprehensive literature review completed (IEEE-format manuscript). Experimental framework, feature engineering pipelines, and model training are in active development. Final thesis chapters will report methodology, results, limitations, and deployment considerations for IoT-scale networks.</p>
+            <div class="detail-meta-row font-mono">
+                <span class="metric-badge">Python / PyTorch</span>
+                <span class="metric-badge">Scikit-learn</span>
+                <span class="metric-badge">LaTeX thesis</span>
+                <span class="metric-badge">Zotero bibliography</span>
+            </div>
+        </div>
+
+        <div class="detail-panel glass-card font-mono">
+            <h2>&gt; RELATED PUBLICATION</h2>
+            <p>Full review: <a href="review-paper.html" class="neon-teal">Intrusion Detection Systems in the Era of IoT and AI (IEEE review)</a></p>
+        </div>
+    </main>
+
+    <footer class="main-footer font-mono">
+        <p>&copy; 2026 Md. Abdulla-Al-Labib.</p>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
