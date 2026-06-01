@@ -353,13 +353,15 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="terminal-row">&nbsp;&nbsp;• Resolved critical router latency metrics and hardware drops.</div>
         `,
         projects: `
-<div class="terminal-row neon-teal">==== PROJECT_REPOSITORIES ====</div>
-<div class="terminal-row"><span class="neon-purple">1.</span> <a href="projects/activision.html" class="neon-teal">ActiVision</a> — GAN + 3D CNN HAR in night/IR video (Capstone)</div>
-<div class="terminal-row"><span class="neon-purple">2.</span> <a href="projects/bauet-website.html" class="neon-teal">BAUET Website</a> — IEMS + official university portal</div>
-<div class="terminal-row"><span class="neon-purple">3.</span> <a href="projects/blood-donation.html" class="neon-teal">Blood Donation App</a> — LifeDrop (Android, Firebase)</div>
-<div class="terminal-row"><span class="neon-purple">4.</span> <a href="projects/medicine-vending-machine.html" class="neon-teal">Medicine Vending Machine</a> — Arduino embedded prototype</div>
-<div class="terminal-row"><span class="neon-emerald">Review:</span> <a href="research/review-paper.html" class="neon-teal">IDS in IoT &amp; AI Era (IEEE review)</a></div>
-<div class="terminal-row"><span class="neon-emerald">Thesis:</span> <a href="research/thesis-ids.html" class="neon-teal">IoT IDS thesis (in progress)</a></div>
+<div class="terminal-row neon-teal">==== PROJECT_REPOSITORIES (see #research section) ====</div>
+<div class="terminal-row"><span class="neon-purple">1.</span> ActiVision — GAN + 3D CNN HAR in night/IR video (CSE 3200 Capstone)</div>
+<div class="terminal-row"><span class="neon-purple">2.</span> BAUET Website — IEMS examination system + official university portal</div>
+<div class="terminal-row"><span class="neon-purple">3.</span> Blood Donation App (LifeDrop) — Android, Java, Firebase, geolocation</div>
+<div class="terminal-row"><span class="neon-purple">4.</span> Medicine Vending Machine — Arduino Uno servo prototype (CSE 4102)</div>
+<div class="terminal-row"><span class="neon-emerald">Review:</span> IDS in the Era of IoT &amp; AI — ML, DL, blockchain &amp; hybrid approaches</div>
+<div class="terminal-row"><span class="neon-emerald">Thesis:</span> IoT intrusion detection thesis (in progress)</div>
+<div class="terminal-row">&nbsp;</div>
+<div class="terminal-row">Scroll to <span class="neon-teal">#research</span> on this page for full details.</div>
         `,
         education: `
 <div class="terminal-row neon-teal">==== EDUCATION_MILESTONES ====</div>
@@ -426,6 +428,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     appendTerminalRow('<div class="terminal-row text-muted">Aesthetic settings restored.</div>');
                 } else if (commandReplies[parsed]) {
                     appendTerminalRow(commandReplies[parsed]);
+                    if (parsed === 'projects') {
+                        document.getElementById('research')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
                 } else {
                     appendTerminalRow(`<div class="terminal-row" style="color: #ff5555;">Command not recognized: "${cmd}". Type <span class="neon-teal">help</span> to view interface actions.</div>`);
                 }
@@ -477,46 +482,61 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('portfolio-contact-form');
     const formStatus = document.getElementById('form-status');
 
+    const FORM_SUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/labibredoy@gmail.com';
+
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const name = document.getElementById('sender-name').value;
-            const email = document.getElementById('sender-email').value;
-            const message = document.getElementById('message-body').value;
+            const name = document.getElementById('sender-name').value.trim();
+            const email = document.getElementById('sender-email').value.trim();
+            const message = document.getElementById('message-body').value.trim();
             const submitBtn = contactForm.querySelector('.transmit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
 
-            // Visual transmission sequences
             submitBtn.disabled = true;
-            submitBtn.querySelector('.btn-text').textContent = "ENCRYPTING_PACKETS...";
-            formStatus.className = "form-status-msg font-mono";
-            formStatus.textContent = "> INITIALIZING TRANSLATION STREAM...";
+            btnText.textContent = 'TRANSMITTING...';
+            formStatus.className = 'form-status-msg font-mono';
+            formStatus.textContent = '> Sending message to labibredoy@gmail.com...';
 
+            try {
+                const response = await fetch(FORM_SUBMIT_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Accept: 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name,
+                        email,
+                        message,
+                        _subject: `Portfolio message from ${name}`,
+                        _captcha: 'false',
+                        _template: 'table',
+                    }),
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    formStatus.className = 'form-status-msg success font-mono';
+                    formStatus.textContent = '✔ Message sent. You will receive a reply at the email you provided.';
+                    contactForm.reset();
+                } else {
+                    throw new Error(result.message || 'Send failed');
+                }
+            } catch {
+                formStatus.className = 'form-status-msg error font-mono';
+                formStatus.textContent = '✖ Could not send automatically. Email labibredoy@gmail.com directly or try again.';
+            }
+
+            btnText.textContent = 'TRANSMIT_PACKET';
+            submitBtn.disabled = false;
             setTimeout(() => {
-                formStatus.textContent = "> ENCRYPTING TRANSMISSION NODES...";
-                setTimeout(() => {
-                    formStatus.textContent = "> INJECTING ENCRYPTED DATA PACKET...";
-                    setTimeout(() => {
-                        formStatus.className = "form-status-msg success font-mono";
-                        formStatus.textContent = "✔ PACKET DELIVERED SUCCESSFULLY. SECURE CALLBACK STREAM LOCKED.";
-                        submitBtn.querySelector('.btn-text').textContent = "PACKET_TRANSMITTED";
-                        
-                        // Fire Mailto callback as backup pre-filled link
-                        const subject = encodeURIComponent(`Portfolio Connection from ${name}`);
-                        const body = encodeURIComponent(`Hi Abdulla-Al-Labib,\n\n${message}\n\nBest Regards,\n${name}\nEmail: ${email}`);
-                        window.location.href = `mailto:labibredoy@gmail.com?subject=${subject}&body=${body}`;
-
-                        // Reset form fields
-                        contactForm.reset();
-                        setTimeout(() => {
-                            submitBtn.disabled = false;
-                            submitBtn.querySelector('.btn-text').textContent = "TRANSMIT_PACKET";
-                            formStatus.textContent = "";
-                        }, 5000);
-
-                    }, 800);
-                }, 800);
-            }, 800);
+                if (formStatus.classList.contains('success')) {
+                    formStatus.textContent = '';
+                }
+            }, 8000);
         });
     }
 
