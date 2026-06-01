@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Abdulla-Al-Labib | AI Research & Network Infrastructure Engineer</title>
+    <!-- SEO Optimization -->
+    <meta name="description" content="Portfolio of Md. Abdulla-Al-Labib. Computer Science student at BAUET specializing in AI research, deep learning, network engineering, and high-performance server administration. Explore active projects, interactive terminals, and systems work.">
+    <meta name="keywords" content="Abdulla-Al-Labib, Labib Redoy, AI Research, Deep Learning, Network Engineering, BdREN, BAUET, CycleGANs, Linux Administration, Cybersecurity, Portfolio">
+    <meta name="author" content="Md. Abdulla-Al-Labib">
+    <meta property="og:title" content="Md. Abdulla-Al-Labib | AI & Network Engineer Portfolio">
+    <meta property="og:description" content="Explore AI research, deep learning pipelines, network configurations, and an interactive Linux terminal simulation.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="cyber-theme-dark">
+    <!-- Particle Background Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Scanning Line Effect -->
+    <div class="hologram-scanline"></div>
+
+    <!-- Interactive Navigation -->
+    <header class="main-header glass-card">
+        <div class="header-container">
+            <a href="#" class="logo-text">
+                <span class="neon-purple">&lt;</span>LABIB<span class="neon-teal">.RED/&gt;</span>
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#about" class="nav-link active">// profile</a></li>
+                    <li><a href="#terminal-section" class="nav-link">// console</a></li>
+                    <li><a href="#experience" class="nav-link">// experience</a></li>
+                    <li><a href="#research" class="nav-link">// research</a></li>
+                    <li><a href="#skills" class="nav-link">// skills</a></li>
+                    <li><a href="#contact" class="nav-link">// contact</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-nav-toggle" aria-label="Toggle Menu" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#about" class="mobile-link">// profile</a></li>
+                <li><a href="#terminal-section" class="mobile-link">// console</a></li>
+                <li><a href="#experience" class="mobile-link">// experience</a></li>
+                <li><a href="#research" class="mobile-link">// research</a></li>
+                <li><a href="#skills" class="mobile-link">// skills</a></li>
+                <li><a href="#contact" class="mobile-link">// contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Container -->
+    <main class="content-wrapper">
+        
+        <!-- Hero & Profile Section -->
+        <section id="about" class="hero-section scroll-reveal">
+            <div class="hero-grid">
+                
+                <!-- Profile Neon Card -->
+                <div class="profile-card glass-card hover-tilt">
+                    <div class="card-glow"></div>
+                    <div class="profile-avatar-container">
+                        <!-- If avatar.png is added by user it will display; otherwise elegant custom SVG structure is shown -->
+                        <div class="avatar-wrapper">
+                            <img src="avatar.png" alt="Md. Abdulla-Al-Labib" class="profile-img" onerror="this.style.display='none'; document.getElementById('fallback-svg-avatar').style.display='block';">
+                            <svg id="fallback-svg-avatar" class="svg-avatar" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="avatar-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#4FACFE" />
+                                        <stop offset="100%" stop-color="#00F2FE" />
+                                    </linearGradient>
+                                    <filter id="avatar-glow">
+                                        <feGaussianBlur stdDeviation="3" result="blur" />
+                                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                    </filter>
+                                </defs>
+                                <circle cx="50" cy="50" r="48" fill="none" stroke="url(#avatar-grad)" stroke-width="2" filter="url(#avatar-glow)"/>
+                                <circle cx="50" cy="50" r="42" fill="#0E0F14" stroke="#1F2430" stroke-width="1"/>
+                                <!-- Cyber hacker graphic avatar -->
+                                <path d="M50,22 C40,22 35,28 35,36 C35,46 41,52 50,52 C59,52 65,46 65,36 C65,28 60,22 50,22 Z" fill="url(#avatar-grad)" />
+                                <path d="M22,75 C22,60 34,56 50,56 C66,56 78,60 78,75 C78,82 72,82 50,82 C28,82 22,82 22,75 Z" fill="url(#avatar-grad)" opacity="0.8" />
+                                <circle cx="43" cy="36" r="2.5" fill="#0B0B0F" />
+                                <circle cx="57" cy="36" r="2.5" fill="#0B0B0F" />
+                                <path d="M47,38.5 Q50,40 53,38.5" fill="none" stroke="#0B0B0F" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M30,50 L42,42 M70,50 L58,42" stroke="#00F2FE" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+                            </svg>
+                        </div>
+                        <div class="status-badge">
+                            <span class="status-indicator-dot"></span>
+                            <span class="status-text">SYSTEM ACTIVE</span>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-details">
+                        <h1 class="dev-name neon-glow-text">Md. Abdulla-Al-Labib</h1>
+                        <p class="dev-tagline">// AI Researcher &amp; Network Engineer</p>
+                        
+                        <div class="meta-item-group">
+                            <div class="meta-item">
+                                <span class="meta-icon">📍</span>
+                                <span class="meta-label">Rajshahi, Bangladesh</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-icon">📧</span>
+                                <a href="mailto:labibredoy@gmail.com" class="meta-link">labibredoy@gmail.com</a>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-icon">🌐</span>
+                                <span class="meta-label">labibredoy.com</span>
+                            </div>
+                        </div>
+
+                        <div class="social-badges">
+                            <a href="https://github.com/labibredoy" target="_blank" class="social-btn glass-card">
+                                <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" fill="currentColor"/></svg>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://linkedin.com/in/labibredoy" target="_blank" class="social-btn glass-card">
+                                <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill="currentColor"/></svg>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Bio Console Card -->
+                <div class="bio-panel glass-card">
+                    <div class="panel-header">
+                        <div class="window-dot red"></div>
+                        <div class="window-dot yellow"></div>
+                        <div class="window-dot green"></div>
+                        <span class="panel-title">profile_data.json</span>
+                        <span class="panel-tag">READ-ONLY</span>
+                    </div>
+                    <div class="panel-body font-mono">
+                        <p class="code-comment">// Core Professional Overview</p>
+                        <p class="code-line"><span class="c-key">"student"</span>: <span class="c-val">"B.Sc in Computer Science &amp; Engineering"</span>,</p>
+                        <p class="code-line"><span class="c-key">"university"</span>: <span class="c-val">"BAUET"</span>,</p>
+                        <p class="code-line"><span class="c-key">"focus_areas"</span>: [</p>
+                        <p class="code-line indent-1"><span class="c-string">"Artificial Intelligence"</span>,</p>
+                        <p class="code-line indent-1"><span class="c-string">"Deep Learning &amp; Computer Vision"</span>,</p>
+                        <p class="code-line indent-1"><span class="c-string">"Network Infrastructure &amp; Servers"</span></p>
+                        <p class="code-line">],</p>
+                        <p class="code-line"><span class="c-key">"core_philosophy"</span>: <span class="c-val">"I thrive in environments requiring technical precision and strategic leadership, aiming to contribute to the global tech landscape through intelligent automation."</span></p>
+                        
+                        <div class="profile-highlights">
+                            <div class="highlight-stat">
+                                <span class="stat-number neon-teal">3.30</span>
+                                <span class="stat-desc">CGPA @ BAUET</span>
+                            </div>
+                            <div class="highlight-stat">
+                                <span class="stat-number neon-purple">2+</span>
+                                <span class="stat-desc">Research Projects</span>
+                            </div>
+                            <div class="highlight-stat">
+                                <span class="stat-number neon-emerald">2025</span>
+                                <span class="stat-desc">BdREN Intern</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Terminal Interactive Section -->
+        <section id="terminal-section" class="terminal-container-section scroll-reveal">
+            <div class="section-title-wrap">
+                <h2 class="section-title neon-glow-text">&gt;_ INTERACTIVE_CONSOLE</h2>
+                <div class="decor-line"></div>
+            </div>
+            
+            <div class="terminal-shell glass-card">
+                <div class="terminal-header">
+                    <div class="window-dot red"></div>
+                    <div class="window-dot yellow"></div>
+                    <div class="window-dot green"></div>
+                    <span class="terminal-title">guest@labibredoy:~</span>
+                    <div class="terminal-sys-time" id="live-time">SYS_TIME: 16:21:51</div>
+                </div>
+                
+                <div class="terminal-body font-mono" id="terminal-output">
+                    <div class="terminal-row">Welcome to Labib's Core Interface [Version 3.5.0-Release].</div>
+                    <div class="terminal-row">Type <span class="neon-teal">help</span> to view available terminal actions.</div>
+                    <div class="terminal-row">&nbsp;</div>
+                </div>
+                
+                <div class="terminal-input-row font-mono">
+                    <span class="terminal-prompt">guest@labibredoy:~$</span>
+                    <div class="input-wrapper">
+                        <input type="text" id="terminal-input" autocomplete="off" autofocus placeholder="Type a command...">
+                        <div class="autocomplete-hint" id="autocomplete-hint"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline & Monitoring Node Visualization -->
+        <section id="experience" class="experience-section scroll-reveal">
+            <div class="section-title-wrap">
+                <h2 class="section-title neon-glow-text">&gt;_ EXPERIENCE_TIMELINE</h2>
+                <div class="decor-line"></div>
+            </div>
+
+            <div class="exp-grid">
+                <!-- Timeline Info Card -->
+                <div class="exp-details-card glass-card">
+                    <div class="card-glow"></div>
+                    <div class="exp-badge">INTERNSHIP // 2025</div>
+                    <h3 class="exp-role">Network Engineering Intern</h3>
+                    <h4 class="exp-org neon-teal">Bangladesh Research and Education Network (BdREN)</h4>
+                    
+                    <ul class="exp-bullets">
+                        <li>
+                            <span class="bullet-glow teal"></span>
+                            <p>Spearheaded campus-wide network monitoring using <strong>LibreNMS, Zabbix, and Cacti</strong> monitors.</p>
+                        </li>
+                        <li>
+                            <span class="bullet-glow purple"></span>
+                            <p>Managed core Linux Server configurations via terminal, guaranteeing excellent server uptime and high-performance routing logs.</p>
+                        </li>
+                        <li>
+                            <span class="bullet-glow emerald"></span>
+                            <p>Conducted extensive technical infrastructure audits at critical campus nodes, including the primary <strong>Chittagong University</strong> link.</p>
+                        </li>
+                        <li>
+                            <span class="bullet-glow blue"></span>
+                            <p>Assisted in troubleshooting hardware latency spikes, fiber outages, and large-scale academic research network routing issues.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Network Monitoring Node Interactive Interface -->
+                <div class="network-vis-card glass-card">
+                    <div class="panel-header">
+                        <span class="panel-title">bdren_backbone_monitor.exe</span>
+                        <div class="pulse-beacon">
+                            <span class="beacon-wave"></span>
+                            <span class="beacon-dot"></span>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p class="vis-instruction font-mono">// Click nodes to inspect active systems monitored during BdREN internship:</p>
+                        
+                        <div class="network-canvas-wrap">
+                            <div class="net-nodes-container">
+                                <!-- Central Router Node -->
+                                <div class="net-node central active-node" id="node-central" data-node="bdren">
+                                    <div class="node-circle">🌐</div>
+                                    <span class="node-name">BdREN Core</span>
+                                </div>
+                                
+                                <!-- Satellite Node 1: Zabbix -->
+                                <div class="net-node sat-node" id="node-zabbix" data-node="zabbix" style="top: 15%; left: 15%;">
+                                    <div class="node-circle">📊</div>
+                                    <span class="node-name">Zabbix Monitor</span>
+                                </div>
+
+                                <!-- Satellite Node 2: LibreNMS -->
+                                <div class="net-node sat-node" id="node-librenms" data-node="librenms" style="top: 15%; right: 15%;">
+                                    <div class="node-circle">📈</div>
+                                    <span class="node-name">LibreNMS</span>
+                                </div>
+
+                                <!-- Satellite Node 3: Linux Server -->
+                                <div class="net-node sat-node" id="node-linux" data-node="linux" style="bottom: 15%; left: 20%;">
+                                    <div class="node-circle">🐧</div>
+                                    <span class="node-name">Linux Server</span>
+                                </div>
+
+                                <!-- Satellite Node 4: CU Link -->
+                                <div class="net-node sat-node" id="node-cu" data-node="cu" style="bottom: 15%; right: 20%;">
+                                    <div class="node-circle">🏫</div>
+                                    <span class="node-name">CU Node Audit</span>
+                                </div>
+
+                                <!-- SVG Connecting Lines -->
+                                <svg class="net-links-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                    <line x1="50%" y1="50%" x2="22%" y2="28%" class="net-link-line" id="link-zabbix"/>
+                                    <line x1="50%" y1="50%" x2="78%" y2="28%" class="net-link-line" id="link-librenms"/>
+                                    <line x1="50%" y1="50%" x2="26%" y2="72%" class="net-link-line" id="link-linux"/>
+                                    <line x1="50%" y1="50%" x2="74%" y2="72%" class="net-link-line" id="link-cu"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Info Display Panel for Active Node -->
+                        <div class="node-info-panel glass-card font-mono" id="node-info-text">
+                            <h4 class="node-info-title neon-teal">&gt; BDREN_CORE_BACKBONE</h4>
+                            <p class="node-info-body">Primary educational and research data network of Bangladesh. Integrates universities and research labs. Interns audited nodes and optimized routing tables.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Research & Projects Grid -->
+        <section id="research" class="research-section scroll-reveal">
+            <div class="section-title-wrap">
+                <h2 class="section-title neon-glow-text">&gt;_ RESEARCH_&amp;_DEVELOPMENT</h2>
+                <div class="decor-line"></div>
+            </div>
+
+            <div class="research-grid">
+                
+                <!-- Project 1: Activision (Deep Learning Research) -->
+                <div class="project-card glass-card">
+                    <div class="card-glow"></div>
+                    <div class="project-tags">
+                        <span class="tag purple">CORE RESEARCH</span>
+                        <span class="tag">AI / DEEP LEARNING</span>
+                    </div>
+                    
+                    <h3 class="project-title">ActiVision: Nighttime Human Activity Recognition</h3>
+                    <p class="project-description">
+                        Engineered a revolutionary deep learning pipeline designed to achieve temporal action recognition in low-visibility environments. Utilizes CycleGANs for synthesizing clear daylight equivalents from infrared inputs.
+                    </p>
+
+                    <!-- Interactive Image Toggle/Slider Sim representing CycleGAN translation -->
+                    <div class="cyclegan-sandbox">
+                        <div class="sandbox-header font-mono">
+                            <span>CycleGAN Synthesizer Frame Preview</span>
+                            <span class="neon-purple" id="sandbox-mode-txt">Mode: INFRARED (INPUT)</span>
+                        </div>
+                        <div class="sandbox-display">
+                            <!-- SVG Representing Infrared frame -->
+                            <div class="frame-canvas ir-canvas active-frame" id="ir-frame">
+                                <div class="thermal-grid"></div>
+                                <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="200" height="120" fill="#0c111e"/>
+                                    <!-- Infrared visual scanlines -->
+                                    <circle cx="100" cy="60" r="25" fill="none" stroke="#ff3b30" stroke-width="1.5" stroke-dasharray="3 3"/>
+                                    <!-- Low vis wireframe human action -->
+                                    <path d="M100,45 L100,65 L85,85 M100,65 L115,85 M100,50 L80,55 M100,50 L120,40" stroke="#ff5b5b" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.8"/>
+                                    <circle cx="100" cy="40" r="4" fill="#ff5b5b" opacity="0.8"/>
+                                    <!-- Static / Thermal Noise overlay -->
+                                    <rect width="200" height="120" fill="url(#static-pattern)" opacity="0.15"/>
+                                </svg>
+                            </div>
+
+                            <!-- SVG Representing daylight translated frame -->
+                            <div class="frame-canvas daylight-canvas" id="day-frame">
+                                <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="200" height="120" fill="#f0f4f8"/>
+                                    <!-- Full visibility reconstructed human action -->
+                                    <path d="M100,45 L100,65 L85,85 M100,65 L115,85 M100,50 L80,55 M100,50 L120,40" stroke="#0052cc" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                                    <circle cx="100" cy="40" r="4.5" fill="#0052cc"/>
+                                    <path d="M70,105 L130,105" stroke="#333" stroke-width="1"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="sandbox-controls font-mono">
+                            <button class="synth-btn active" id="btn-show-ir">View Infrared Input</button>
+                            <button class="synth-btn" id="btn-show-day">Execute CycleGAN (Daylight Synthesis)</button>
+                        </div>
+                    </div>
+
+                    <ul class="project-bullets font-mono">
+                        <li><span>⚡</span> Pipeline: CycleGANs + 3D CNNs</li>
+                        <li><span>⚡</span> Focus: Low-visibility environments</li>
+                        <li><span>⚡</span> Docs: Managed in LaTeX/Zotero</li>
+                    </ul>
+                </div>
+
+                <!-- Project 2: University Service Management Application -->
+                <div class="project-card glass-card">
+                    <div class="card-glow"></div>
+                    <div class="project-tags">
+                        <span class="tag teal">SOFTWARE ENGINEERING</span>
+                        <span class="tag">SYSTEM DESIGN</span>
+                    </div>
+
+                    <h3 class="project-title">University Service Management App</h3>
+                    <p class="project-description">
+                        Designed an integrated software architecture to digitize academic attendance reporting, class metrics, and student financial audit pipelines. Includes a highly concurrent database backend optimized for student registrations.
+                    </p>
+
+                    <!-- Interactive Database Schema Widget -->
+                    <div class="db-schema-sandbox">
+                        <div class="sandbox-header font-mono">
+                            <span>Relational DB Schema Optimizer</span>
+                            <span class="neon-teal">CONCURRENCY: OPTIMIZED</span>
+                        </div>
+                        
+                        <div class="db-schema-grid font-mono">
+                            <!-- Table 1: Students -->
+                            <div class="db-table glass-card">
+                                <div class="table-title">tbl_students</div>
+                                <div class="table-rows">
+                                    <div class="table-field pk">id <span class="field-type">INT [PK]</span></div>
+                                    <div class="table-field">student_id <span class="field-type">VARCHAR</span></div>
+                                    <div class="table-field">attendance_pct <span class="field-type">DECIMAL</span></div>
+                                    <div class="table-field">financial_status <span class="field-type">VARCHAR</span></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Connecting Link representation -->
+                            <div class="db-connector">⇄</div>
+
+                            <!-- Table 2: Attendance -->
+                            <div class="db-table glass-card">
+                                <div class="table-title">tbl_attendance</div>
+                                <div class="table-rows">
+                                    <div class="table-field pk">record_id <span class="field-type">INT [PK]</span></div>
+                                    <div class="table-field fk">student_id <span class="field-type">INT [FK]</span></div>
+                                    <div class="table-field">date_timestamp <span class="field-type">DATETIME</span></div>
+                                    <div class="table-field">status_code <span class="field-type">TINYINT</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="optimization-metrics font-mono">
+                            <span class="metric-badge">INDEXED: student_id</span>
+                            <span class="metric-badge">CONCURRENCY: POOL_SIZE 150</span>
+                        </div>
+                    </div>
+
+                    <ul class="project-bullets font-mono">
+                        <li><span>⚡</span> Stack: Optimized Relational Schema</li>
+                        <li><span>⚡</span> Services: Digital Attendance &amp; Finance</li>
+                        <li><span>⚡</span> Feature: Multi-concurrency buffer pools</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- High-Tech Skills Dashboard -->
+        <section id="skills" class="skills-section scroll-reveal">
+            <div class="section-title-wrap">
+                <h2 class="section-title neon-glow-text">&gt;_ CORE_CAPABILITIES</h2>
+                <div class="decor-line"></div>
+            </div>
+
+            <div class="skills-dashboard">
+                <!-- Skill Category 1 -->
+                <div class="skill-category-card glass-card">
+                    <h3 class="category-header neon-teal">// PROGRAMMING</h3>
+                    <div class="skill-item-wrap">
+                        <div class="skill-row-item">
+                            <div class="skill-name font-mono">C / C++</div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill teal-glow" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row-item">
+                            <div class="skill-name font-mono">Python (AI Stack)</div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill teal-glow" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row-item">
+                            <div class="skill-name font-mono">Assembly (8086)</div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill teal-glow" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Category 2 -->
+                <div class="skill-category-card glass-card">
+                    <h3 class="category-header neon-purple">// AI &amp; RESEARCH</h3>
+                    <div class="skill-item-wrap">
+                        <div class="skill-row-item">
+                            <div class="skill-name font-mono">Deep Learning (GANs, CNNs)</div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill purple-glow" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row-item">
+                            <div class="skill-name font-mono">Computer Vision (CV)</div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill purple-glow" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row-item">
+                            <div class="skill-name font-mono">LaTeX &amp; Scientific Writing</div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill purple-glow" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Category 3 -->
+                <div class="skill-category-card glass-card">
+                    <h3 class="category-header neon-emerald">// SYSTEMS &amp; MONITORING</h3>
+                    <div class="skill-item-wrap">
+                        <div class="skill-row-item">
+                            <div class="skill-name font-mono">Linux Server (Ubuntu Server)</div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill emerald-glow" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row-item">
+                            <div class="skill-name font-mono">Network Monitoring (Zabbix, LibreNMS)</div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill emerald-glow" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row-item">
+                            <div class="skill-name font-mono">Git &amp; Version Control</div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill emerald-glow" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Category 4 -->
+                <div class="skill-category-card glass-card">
+                    <h3 class="category-header neon-blue">// DESIGN &amp; BRANDING</h3>
+                    <div class="skill-item-wrap">
+                        <div class="skill-row-item">
+                            <div class="skill-name font-mono">Adobe Illustrator</div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill blue-glow" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row-item">
+                            <div class="skill-name font-mono">Canva (Professional Visual Branding)</div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill blue-glow" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row-item">
+                            <div class="skill-name font-mono">Office Suite (Word, PPT, Excel)</div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill blue-glow" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership & Impact Showcase -->
+        <section id="leadership" class="leadership-section scroll-reveal">
+            <div class="section-title-wrap">
+                <h2 class="section-title neon-glow-text">&gt;_ LEADERSHIP_&amp;_IMPACT</h2>
+                <div class="decor-line"></div>
+            </div>
+
+            <div class="leader-card glass-card">
+                <div class="card-glow"></div>
+                <div class="leader-header">
+                    <div class="leader-org font-mono">HULT PRIZE FOUNDATION</div>
+                    <div class="leader-period font-mono">2025 – 2026</div>
+                </div>
+                <h3 class="leader-title">Campus Director (Hult Prize at BAUET)</h3>
+                
+                <div class="leader-highlights">
+                    <div class="highlight-node glass-card hover-tilt">
+                        <span class="node-icon">👥</span>
+                        <div class="node-stats font-mono">37 members</div>
+                        <div class="node-label">Organizing Committee formed and managed</div>
+                    </div>
+                    <div class="highlight-node glass-card hover-tilt">
+                        <span class="node-icon">🚀</span>
+                        <div class="node-stats font-mono">190+ participants</div>
+                        <div class="node-label">Competitors guided through design training workshops</div>
+                    </div>
+                    <div class="highlight-node glass-card hover-tilt">
+                        <span class="node-icon">🎖️</span>
+                        <div class="node-stats font-mono">High-profile</div>
+                        <div class="node-label">Judges recruited from key national organizations</div>
+                    </div>
+                </div>
+
+                <div class="leader-verdict font-mono">
+                    <span class="neon-teal">// STATISTICAL METRIC ACHIEVED</span>
+                    <p>Achieved the highest participant turnout in the history of the university program through data-driven campaigns and strategic marketing alignment.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- References Section -->
+        <section class="references-section scroll-reveal">
+            <div class="section-title-wrap">
+                <h2 class="section-title neon-glow-text">&gt;_ REFERENCES</h2>
+                <div class="decor-line"></div>
+            </div>
+
+            <div class="ref-grid">
+                <div class="ref-card glass-card font-mono">
+                    <div class="ref-header">
+                        <span class="ref-icon">👔</span>
+                        <div>
+                            <h4 class="ref-name">Mohammed Golam Sarwar Bhuyan</h4>
+                            <p class="ref-title">Professor &amp; Dean, Faculty of ECE</p>
+                        </div>
+                    </div>
+                    <p class="ref-org">// Bangladesh Army University of Engineering and Technology (BAUET)</p>
+                    <div class="ref-contact-links">
+                        <span class="ref-detail">📧 Email: csesarwar@gmail.com</span>
+                        <span class="ref-detail">📞 Mobile: +8801708503574</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Interactive Form -->
+        <section id="contact" class="contact-section scroll-reveal">
+            <div class="section-title-wrap">
+                <h2 class="section-title neon-glow-text">&gt;_ CONNECT_COMMUNICATION</h2>
+                <div class="decor-line"></div>
+            </div>
+
+            <div class="contact-card glass-card">
+                <div class="card-glow"></div>
+                <div class="contact-grid">
+                    
+                    <div class="contact-info font-mono">
+                        <h3 class="neon-teal">Ready to build or audit?</h3>
+                        <p>Whether you want to consult on deep learning pipelines, optimize massive campus network environments, or manage structural innovation, establish the connection stream:</p>
+                        
+                        <div class="direct-channels">
+                            <div class="channel-link">
+                                <span class="neon-purple">stream://</span>
+                                <span>labibredoy@gmail.com</span>
+                            </div>
+                            <div class="channel-link">
+                                <span class="neon-teal">telnet://</span>
+                                <span>+8801521771410</span>
+                            </div>
+                            <div class="channel-link">
+                                <span class="neon-emerald">location://</span>
+                                <span>Rajshahi, Bangladesh</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cybernetic Contact Console Form -->
+                    <form class="contact-form font-mono" id="portfolio-contact-form" action="#" method="POST">
+                        <div class="form-row">
+                            <label for="sender-name">SENDER_NAME:</label>
+                            <input type="text" id="sender-name" name="name" required placeholder="Enter identifier...">
+                        </div>
+                        <div class="form-row">
+                            <label for="sender-email">SENDER_EMAIL:</label>
+                            <input type="email" id="sender-email" name="email" required placeholder="Enter communication node...">
+                        </div>
+                        <div class="form-row">
+                            <label for="message-body">MESSAGE_BODY:</label>
+                            <textarea id="message-body" name="message" required rows="5" placeholder="Transmit packet data here..."></textarea>
+                        </div>
+                        <button type="submit" class="transmit-btn">
+                            <span class="btn-text">TRANSMIT_PACKET</span>
+                            <span class="btn-laser"></span>
+                        </button>
+                        <div class="form-status-msg" id="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer font-mono">
+        <p>&copy; 2026 Md. Abdulla-Al-Labib. All systems operational.</p>
+        <p class="hologram-foot-text">BUILD_VER: 3.5.0-STABLE // ENCRYPTED VIA CLIENT SIDE</p>
+    </footer>
+
+    <!-- Image static patterns and overlay definitions -->
+    <svg style="display: none;">
+        <defs>
+            <pattern id="static-pattern" width="10" height="10" patternUnits="userSpaceOnUse">
+                <rect width="2" height="2" fill="#888" opacity="0.3"/>
+                <rect x="5" y="5" width="2" height="2" fill="#fff" opacity="0.2"/>
+            </pattern>
+        </defs>
+    </svg>
+
+    <!-- Script Resource Links -->
+    <script src="script.js"></script>
+</body>
+</html>
