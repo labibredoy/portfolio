@@ -30,7 +30,7 @@
     <!-- Interactive Navigation -->
     <header class="main-header glass-card">
         <div class="header-container">
-            <a href="index.html" class="logo-text">
+            <a href="#about" class="logo-text">
                 <span class="neon-purple">&lt;</span>labib<span class="neon-teal">/&gt;</span>
             </a>
             
@@ -312,63 +312,113 @@
             </div>
         </section>
 
-        <!-- Projects, Review Paper & Thesis -->
-        <section id="research" class="research-section scroll-reveal">
+        <!-- Projects, Review Paper & Thesis (single-page) -->
+        <section id="research" class="research-section research-section--calm">
             <div class="section-title-wrap">
                 <h2 class="section-title neon-glow-text">&gt;_ RESEARCH_&amp;_DEVELOPMENT</h2>
                 <div class="decor-line"></div>
             </div>
 
-            <p class="work-section-intro font-mono">// Select a module to open the full case study</p>
+            <p class="work-section-intro font-mono">// Projects, publications, and thesis work — all documented on this page</p>
 
             <h3 class="work-subheading font-mono neon-teal">projects[4]</h3>
+
+            <article class="work-info-card glass-card project-card-full">
+                <div class="card-glow"></div>
+                <span class="tag purple">CAPSTONE — CSE 3200</span>
+                <h3 class="work-card-title">ActiVision: GAN-Based HAR in Night Vision &amp; Infrared Video</h3>
+                <p class="work-card-desc">Capstone Phase I proposal (BAUET, Batch 16th). Converts daytime datasets into synthetic night, IR, and thermal video using CycleGANs, then trains 3D CNN models for human activity recognition when visible-light cameras fail.</p>
+                <ul class="project-bullets font-mono">
+                    <li><span>⚡</span> Datasets: UCF101, HMDB; stack: TensorFlow/PyTorch, OpenCV</li>
+                    <li><span>⚡</span> Applications: surveillance, healthcare monitoring, autonomous navigation</li>
+                    <li><span>⚡</span> Team: Afia Mubassira, Md. Abdulla-Al-Labib, Md. Tarakur Rahman</li>
+                </ul>
+                <div class="cyclegan-sandbox cyclegan-sandbox--static">
+                    <div class="sandbox-header font-mono">
+                        <span>Frame comparison (static preview)</span>
+                    </div>
+                    <div class="sandbox-compare">
+                        <div class="compare-panel">
+                            <span class="compare-label font-mono">Infrared input</span>
+                            <div class="compare-frame ir-canvas">
+                                <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <rect width="200" height="120" fill="#0c111e"/>
+                                    <circle cx="100" cy="60" r="25" fill="none" stroke="#ff3b30" stroke-width="1.5" stroke-dasharray="3 3"/>
+                                    <path d="M100,45 L100,65 L85,85 M100,65 L115,85 M100,50 L80,55 M100,50 L120,40" stroke="#ff5b5b" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.8"/>
+                                    <circle cx="100" cy="40" r="4" fill="#ff5b5b" opacity="0.8"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="compare-panel">
+                            <span class="compare-label font-mono">CycleGAN daylight output</span>
+                            <div class="compare-frame daylight-canvas">
+                                <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <rect width="200" height="120" fill="#f0f4f8"/>
+                                    <path d="M100,45 L100,65 L85,85 M100,65 L115,85 M100,50 L80,55 M100,50 L120,40" stroke="#0052cc" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                                    <circle cx="100" cy="40" r="4.5" fill="#0052cc"/>
+                                    <path d="M70,105 L130,105" stroke="#333" stroke-width="1"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
             <div class="work-grid">
-                <a href="projects/activision.html" class="work-link-card glass-card hover-tilt">
-                    <div class="card-glow"></div>
-                    <span class="tag purple">CAPSTONE — GAN / 3D CNN</span>
-                    <h3 class="work-card-title">ActiVision</h3>
-                    <p class="work-card-desc">GAN-based real-time human activity recognition in night vision and infrared video (CSE 3200 capstone proposal).</p>
-                    <span class="work-card-cta font-mono">open_case_study →</span>
-                </a>
-                <a href="projects/bauet-website.html" class="work-link-card glass-card hover-tilt">
+                <article class="work-info-card glass-card">
                     <div class="card-glow"></div>
                     <span class="tag">WEB SYSTEMS</span>
                     <h3 class="work-card-title">BAUET Website Development</h3>
-                    <p class="work-card-desc">IEMS examination platform plus modernized official BAUET website for digital campus transformation.</p>
-                    <span class="work-card-cta font-mono">open_case_study →</span>
-                </a>
-                <a href="projects/blood-donation.html" class="work-link-card glass-card hover-tilt">
+                    <p class="work-card-desc">Digital campus initiative: <strong>Institute Examination Management System (IEMS)</strong> for automated scheduling, seating, results, and invigilation workflows—plus a responsive official BAUET portal with faculty directories, news, and student services.</p>
+                    <ul class="project-bullets font-mono">
+                        <li><span>⚡</span> Role-based dashboards, real-time exam notifications</li>
+                        <li><span>⚡</span> SEO-friendly, mobile-first public website</li>
+                    </ul>
+                </article>
+                <article class="work-info-card glass-card">
                     <div class="card-glow"></div>
                     <span class="tag teal">ANDROID / FIREBASE</span>
-                    <h3 class="work-card-title">Blood Donation Mobile App</h3>
-                    <p class="work-card-desc">LifeDrop — geolocation-based donor matching app (Java, Android Studio, Firebase) for emergency blood requests.</p>
-                    <span class="work-card-cta font-mono">open_case_study →</span>
-                </a>
-                <a href="projects/medicine-vending-machine.html" class="work-link-card glass-card hover-tilt">
+                    <h3 class="work-card-title">Blood Donation Mobile App (LifeDrop)</h3>
+                    <p class="work-card-desc">Advanced Programming Lab project. Android app matching donors and recipients by blood type and geolocation—with secure Firebase auth, request status tracking, and educational content on donation eligibility.</p>
+                    <ul class="project-bullets font-mono">
+                        <li><span>⚡</span> Stack: Java, Android Studio, Firebase</li>
+                        <li><span>⚡</span> Real-time donor search and emergency notifications</li>
+                    </ul>
+                </article>
+                <article class="work-info-card glass-card">
                     <div class="card-glow"></div>
-                    <span class="tag emerald">EMBEDDED SYSTEMS</span>
-                    <h3 class="work-card-title">Medicine Vending Machine</h3>
-                    <p class="work-card-desc">Arduino Uno prototype with servo dispensing for automated medicine delivery (CSE 4102 embedded systems).</p>
-                    <span class="work-card-cta font-mono">open_case_study →</span>
-                </a>
+                    <span class="tag emerald">EMBEDDED — CSE 4102</span>
+                    <h3 class="work-card-title">Smart Medicine Vending Machine</h3>
+                    <p class="work-card-desc">Arduino Uno prototype with servo-driven dispensing, push-button trigger, and portable power—automating medicine release for areas with limited pharmacy access (Microprocessors &amp; Embedded Systems, Winter 2025).</p>
+                    <ul class="project-bullets font-mono">
+                        <li><span>⚡</span> Hardware: servo (pin 9), button (pin 2), 5V power bank</li>
+                        <li><span>⚡</span> Future: cloud monitoring, RFID auth, multi-compartment design</li>
+                    </ul>
+                </article>
             </div>
 
             <h3 class="work-subheading font-mono neon-purple">publications &amp; thesis</h3>
             <div class="work-grid work-grid--dual">
-                <a href="research/review-paper.html" class="work-link-card glass-card hover-tilt">
+                <article class="work-info-card glass-card">
                     <div class="card-glow"></div>
-                    <span class="tag purple">REVIEW PAPER</span>
-                    <h3 class="work-card-title">IDS in the Era of IoT &amp; AI</h3>
-                    <p class="work-card-desc">IEEE-style review of ML, DL, blockchain and hybrid intrusion detection approaches for modern IoT networks.</p>
-                    <span class="work-card-cta font-mono">read_publication →</span>
-                </a>
-                <a href="research/thesis-ids.html" class="work-link-card glass-card hover-tilt">
+                    <span class="tag purple">IEEE-STYLE REVIEW PAPER</span>
+                    <h3 class="work-card-title">Intrusion Detection Systems in the Era of IoT and AI</h3>
+                    <p class="work-card-desc">Comprehensive review of ML-, DL-, and blockchain-grounded IDS for IoT/IIoT—covering NSL-KDD, UNSW-NB15, CIC-IDS, CICIoT2023, federated edge IDS, hybrid CNN–BiLSTM models, and challenges such as concept drift and adversarial evasion.</p>
+                    <ul class="project-bullets font-mono">
+                        <li><span>⚡</span> Sections: taxonomy, datasets, comparative analysis, future directions</li>
+                        <li><span>⚡</span> Author: Md. Abdulla-Al-Labib, Dept. of CSE, BAUET</li>
+                    </ul>
+                </article>
+                <article class="work-info-card glass-card">
                     <div class="card-glow"></div>
                     <span class="tag emerald">THESIS — IN PROGRESS</span>
-                    <h3 class="work-card-title">Thesis: IoT Intrusion Detection</h3>
-                    <p class="work-card-desc">In-progress thesis extending the IDS review with experiments on IoT benchmarks and hybrid intelligent detectors.</p>
-                    <span class="work-card-cta font-mono">view_thesis_progress →</span>
-                </a>
+                    <h3 class="work-card-title">Thesis: IoT Intrusion Detection Using Hybrid Approaches</h3>
+                    <p class="work-card-desc">Extends the review paper with original experiments on modern IoT intrusion benchmarks—baseline RF/XGBoost vs. deep detectors, reproducible preprocessing, and evaluation of detection rate, F1, and edge inference latency.</p>
+                    <ul class="project-bullets font-mono">
+                        <li><span>⚡</span> Status: literature complete; training pipeline in development</li>
+                        <li><span>⚡</span> Tools: Python, PyTorch, scikit-learn, LaTeX, Zotero</li>
+                    </ul>
+                </article>
             </div>
         </section>
 
@@ -565,11 +615,11 @@
                         <div class="direct-channels">
                             <div class="channel-link">
                                 <span class="neon-purple">stream://</span>
-                                <span>labibredoy@gmail.com</span>
+                                <a href="mailto:labibredoy@gmail.com">labibredoy@gmail.com</a>
                             </div>
                             <div class="channel-link">
                                 <span class="neon-teal">telnet://</span>
-                                <span>+8801521771410</span>
+                                <a href="tel:+8801521771410">+8801521771410</a>
                             </div>
                             <div class="channel-link">
                                 <span class="neon-emerald">location://</span>
@@ -579,7 +629,11 @@
                     </div>
 
                     <!-- Cybernetic Contact Console Form -->
-                    <form class="contact-form font-mono" id="portfolio-contact-form" action="#" method="POST">
+                    <form class="contact-form font-mono" id="portfolio-contact-form" action="https://formsubmit.co/labibredoy@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New portfolio message">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                         <div class="form-row">
                             <label for="sender-name">SENDER_NAME:</label>
                             <input type="text" id="sender-name" name="name" required placeholder="Enter identifier...">
