@@ -3,7 +3,18 @@
    Features: Particle Network, Interactive Shell, Schema Inspections, Page Toggles
    ========================================================================== */
 
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+});
+window.addEventListener('pageshow', (e) => {
+    if (e.persisted) window.scrollTo(0, 0);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
+    window.scrollTo(0, 0);
     
     // --- 1. Global Setup & Real-time Clock ---
     const liveTimeEl = document.getElementById('live-time');
@@ -114,8 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 5. Interactive Network Node Backbone Monitor ---
     const netNodes = document.querySelectorAll('.net-node');
-    const nodeTitle = document.getElementById('node-info-text').querySelector('.node-info-title');
-    const nodeBody = document.getElementById('node-info-text').querySelector('.node-info-body');
+    const nodeInfoPanel = document.getElementById('node-info-text');
+    const nodeTitle = nodeInfoPanel?.querySelector('.node-info-title');
+    const nodeBody = nodeInfoPanel?.querySelector('.node-info-body');
 
     const nodeMetadata = {
         bdren: {
@@ -140,25 +152,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    netNodes.forEach(node => {
-        node.addEventListener('click', () => {
-            netNodes.forEach(n => n.classList.remove('active-node'));
-            node.classList.add('active-node');
-            
-            const target = node.getAttribute('data-node');
-            if (nodeMetadata[target]) {
-                nodeTitle.textContent = nodeMetadata[target].title;
-                nodeBody.textContent = nodeMetadata[target].desc;
-                
-                // Color highlight changes
-                if (target === 'bdren') {
-                    nodeTitle.style.color = 'var(--neon-teal)';
-                } else {
-                    nodeTitle.style.color = 'var(--neon-emerald)';
+    if (nodeTitle && nodeBody) {
+        netNodes.forEach(node => {
+            node.addEventListener('click', () => {
+                netNodes.forEach(n => n.classList.remove('active-node'));
+                node.classList.add('active-node');
+
+                const target = node.getAttribute('data-node');
+                if (nodeMetadata[target]) {
+                    nodeTitle.textContent = nodeMetadata[target].title;
+                    nodeBody.textContent = nodeMetadata[target].desc;
+
+                    if (target === 'bdren') {
+                        nodeTitle.style.color = 'var(--neon-teal)';
+                    } else {
+                        nodeTitle.style.color = 'var(--neon-emerald)';
+                    }
                 }
-            }
+            });
         });
-    });
+    }
 
     // --- 6. Activision: Infrared vs Translated Frame CycleGAN Sandbox ---
     const btnShowIR = document.getElementById('btn-show-ir');
@@ -189,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 7. Neural Network Particle Background Simulation ---
     const canvas = document.getElementById('particle-canvas');
+    if (!canvas) return;
     const ctx = canvas.getContext('2d');
     
     let particles = [];
@@ -340,19 +354,18 @@ document.addEventListener('DOMContentLoaded', () => {
         `,
         projects: `
 <div class="terminal-row neon-teal">==== PROJECT_REPOSITORIES ====</div>
-<div class="terminal-row"><span class="neon-purple">1. ActiVision: Nighttime Action Recognition [Research]</span></div>
-<div class="terminal-row">&nbsp;&nbsp;&nbsp;&nbsp;• Core: Nighttime human action translated to daylight frames.</div>
-<div class="terminal-row">&nbsp;&nbsp;&nbsp;&nbsp;• Stack: CycleGAN daylight synthesizers + temporal 3D CNNs.</div>
-<div class="terminal-row">&nbsp;&nbsp;&nbsp;&nbsp;• Repo status: Research Paper &amp; pipeline documentation locked.</div>
-<div class="terminal-row"><span class="neon-blue">2. University Service Management [Software Engineering]</span></div>
-<div class="terminal-row">&nbsp;&nbsp;&nbsp;&nbsp;• Core: Digital attendance and student financial audit stream.</div>
-<div class="terminal-row">&nbsp;&nbsp;&nbsp;&nbsp;• Stack: Highly concurrent relational database schema design.</div>
+<div class="terminal-row"><span class="neon-purple">1.</span> <a href="projects/activision.html" class="neon-teal">ActiVision</a> — GAN + 3D CNN HAR in night/IR video (Capstone)</div>
+<div class="terminal-row"><span class="neon-purple">2.</span> <a href="projects/bauet-website.html" class="neon-teal">BAUET Website</a> — IEMS + official university portal</div>
+<div class="terminal-row"><span class="neon-purple">3.</span> <a href="projects/blood-donation.html" class="neon-teal">Blood Donation App</a> — LifeDrop (Android, Firebase)</div>
+<div class="terminal-row"><span class="neon-purple">4.</span> <a href="projects/medicine-vending-machine.html" class="neon-teal">Medicine Vending Machine</a> — Arduino embedded prototype</div>
+<div class="terminal-row"><span class="neon-emerald">Review:</span> <a href="research/review-paper.html" class="neon-teal">IDS in IoT &amp; AI Era (IEEE review)</a></div>
+<div class="terminal-row"><span class="neon-emerald">Thesis:</span> <a href="research/thesis-ids.html" class="neon-teal">IoT IDS thesis (in progress)</a></div>
         `,
         education: `
 <div class="terminal-row neon-teal">==== EDUCATION_MILESTONES ====</div>
 <div class="terminal-row">🎓 <span class="neon-purple">B.Sc in Computer Science &amp; Engineering</span></div>
 <div class="terminal-row">&nbsp;&nbsp;&nbsp;&nbsp;Bangladesh Army University of Engineering &amp; Technology (BAUET)</div>
-<div class="terminal-row">&nbsp;&nbsp;&nbsp;&nbsp;Timeline: 2022 - Present | CGPA: <span class="neon-emerald">3.30 / 4.00</span></div>
+<div class="terminal-row">&nbsp;&nbsp;&nbsp;&nbsp;Timeline: 2022 - Present</div>
 <div class="terminal-row">🎓 <span class="neon-purple">Higher Secondary Certificate (HSC)</span></div>
 <div class="terminal-row">&nbsp;&nbsp;&nbsp;&nbsp;Shahid A.H.M. Kamaruzzaman Govt. Degree College, Rajshahi</div>
 <div class="terminal-row">&nbsp;&nbsp;&nbsp;&nbsp;Year: 2020 | GPA: <span class="neon-emerald">5.00 / 5.00</span></div>
