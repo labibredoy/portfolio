@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Mobile App (LifeDrop) | Md. Abdulla-Al-Labib</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="cyber-theme-dark">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hologram-scanline"></div>
+
+    <header class="main-header glass-card">
+        <div class="header-container">
+            <a href="../index.html" class="logo-text">
+                <span class="neon-purple">&lt;</span>labib<span class="neon-teal">/&gt;</span>
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="../index.html#research" class="nav-link">// projects</a></li>
+                    <li><a href="../index.html#contact" class="nav-link">// contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-wrapper detail-page">
+        <a href="../index.html#research" class="detail-back">← back_to_home</a>
+
+        <div class="detail-hero">
+            <div class="project-tags">
+                <span class="tag teal">MOBILE DEVELOPMENT</span>
+                <span class="tag">CSE — ADVANCED PROGRAMMING LAB</span>
+            </div>
+            <h1 class="detail-title neon-glow-text">Blood Donation Mobile App</h1>
+            <p class="detail-lead">Android application (branded <strong>LifeDrop</strong>) that connects blood donors and recipients in real time using geolocation, blood-type matching, and Firebase-backed secure authentication—reducing emergency response time when hospitals need compatible donors quickly.</p>
+        </div>
+
+        <div class="detail-panel glass-card">
+            <h2>&gt; OBJECTIVES</h2>
+            <ul>
+                <li>Streamline blood donation by automating donor–recipient matching by blood group and proximity</li>
+                <li>Improve accessibility with an intuitive UI for users of all technical backgrounds</li>
+                <li>Notify suitable nearby donors instantly during medical emergencies</li>
+                <li>Promote regular donation through reminders and educational content on eligibility and benefits</li>
+            </ul>
+        </div>
+
+        <div class="detail-panel glass-card">
+            <h2>&gt; SYSTEM FLOW</h2>
+            <p>Users register as donors or request blood with type and location. The app searches compatible donors, sends notifications, and supports accept/decline workflows with contact details surfaced after a match—documented in the project report as a full app diagram from signup through successful data update.</p>
+            <ul>
+                <li>Welcome, login, and registration (name, phone, blood group, password)</li>
+                <li>Home hub: profile, donor search, request status, available donors</li>
+                <li>Educational info page on donation types and eligibility</li>
+                <li>Request pipeline with real-time status and notifications</li>
+            </ul>
+        </div>
+
+        <div class="detail-panel glass-card">
+            <h2>&gt; STACK &amp; METHODOLOGY</h2>
+            <div class="detail-meta-row font-mono">
+                <span class="metric-badge">Android Studio</span>
+                <span class="metric-badge">Java</span>
+                <span class="metric-badge">Firebase Auth &amp; Database</span>
+                <span class="metric-badge">Geolocation</span>
+            </div>
+            <p class="detail-meta-note font-mono" style="margin-top:16px;color:var(--text-muted);">Development followed structured phases: conceptualization, UI design, iterative coding, QA testing, and Google Play deployment planning. Team project — Batch 16th, BAUET.</p>
+        </div>
+    </main>
+
+    <footer class="main-footer font-mono">
+        <p>&copy; 2026 Md. Abdulla-Al-Labib.</p>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

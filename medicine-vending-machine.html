@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Vending Machine | Md. Abdulla-Al-Labib</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="cyber-theme-dark">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hologram-scanline"></div>
+
+    <header class="main-header glass-card">
+        <div class="header-container">
+            <a href="../index.html" class="logo-text">
+                <span class="neon-purple">&lt;</span>labib<span class="neon-teal">/&gt;</span>
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="../index.html#research" class="nav-link">// projects</a></li>
+                    <li><a href="../index.html#contact" class="nav-link">// contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-wrapper detail-page">
+        <a href="../index.html#research" class="detail-back">← back_to_home</a>
+
+        <div class="detail-hero">
+            <div class="project-tags">
+                <span class="tag emerald">EMBEDDED SYSTEMS</span>
+                <span class="tag">CSE 4102 — MICROPROCESSORS</span>
+            </div>
+            <h1 class="detail-title neon-glow-text">Smart Medicine Vending Machine</h1>
+            <p class="detail-lead">Self-service automated prototype built on <strong>Arduino Uno</strong> with a servo-driven dispensing mechanism, push-button input, and portable power—designed to dispense essential medicines efficiently where pharmacy access is limited (Winter 2025 sessional project, BAUET).</p>
+        </div>
+
+        <div class="detail-panel glass-card">
+            <h2>&gt; MOTIVATION</h2>
+            <p>Traditional medicine distribution often depends on direct human interaction, increasing delay and cost. This prototype demonstrates low-cost embedded automation for emergency or after-hours medicine access using minimal hardware and reliable control logic.</p>
+        </div>
+
+        <div class="detail-panel glass-card">
+            <h2>&gt; HARDWARE DESIGN</h2>
+            <ul>
+                <li><strong>Arduino Uno</strong> — main controller (5V operation)</li>
+                <li><strong>Servo motor</strong> — rotational dispensing (signal on digital pin 9)</li>
+                <li><strong>Push button / switch</strong> — user trigger (digital pin 2)</li>
+                <li><strong>Power bank</strong> — portable 5V supply</li>
+                <li><strong>PVC board &amp; transparent plastic</strong> — lightweight enclosure</li>
+            </ul>
+            <div class="detail-meta-row font-mono">
+                <span class="metric-badge">Prototype cost ≈ 1,880 BDT</span>
+                <span class="metric-badge">Arduino IDE</span>
+            </div>
+        </div>
+
+        <div class="detail-panel glass-card">
+            <h2>&gt; OPERATION</h2>
+            <p>On boot, the servo initializes to a home position. The Arduino polls the button; when pressed, the servo rotates to release medicine, then returns to default—looping for the next cycle. Literature review covered smart vending, pill dispensers, and IoT healthcare devices; future work includes cloud monitoring, RFID auth, and multi-compartment dispensing.</p>
+        </div>
+
+        <div class="detail-panel glass-card font-mono">
+            <h2>&gt; TEAM</h2>
+            <p>Sessional final project — Microprocessors, Microcontrollers and Embedded Systems (CSE 4102). Instructors: Fatin Nibash Naib, Md. Momenul Haque.</p>
+        </div>
+    </main>
+
+    <footer class="main-footer font-mono">
+        <p>&copy; 2026 Md. Abdulla-Al-Labib.</p>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
