@@ -1670,3 +1670,207 @@ a:hover {
         gap: 8px;
     }
 }
+
+/* --------------------------------------------------------------------------
+   Work Grid (Home) & Detail Pages
+   -------------------------------------------------------------------------- */
+.work-section-intro {
+    color: var(--text-muted);
+    margin-bottom: 28px;
+    font-size: 0.9rem;
+}
+
+.work-subheading {
+    margin: 36px 0 20px;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 12px;
+}
+
+.work-grid--dual {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.work-link-card {
+    position: relative;
+    padding: 28px 32px;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 2px solid var(--border-glass);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 200px;
+}
+
+.work-link-card:hover {
+    border-bottom-color: var(--neon-teal);
+    transform: translateY(-4px);
+}
+
+.work-card-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-bright);
+}
+
+.work-card-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    flex-grow: 1;
+}
+
+.work-card-cta {
+    color: var(--neon-teal);
+    font-size: 0.85rem;
+    margin-top: auto;
+}
+
+.tag.emerald {
+    color: var(--neon-emerald);
+    border-color: rgba(0, 245, 160, 0.35);
+}
+
+.detail-page {
+    padding-top: 120px;
+    padding-bottom: 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.detail-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--neon-teal);
+    text-decoration: none;
+    margin-bottom: 32px;
+    transition: var(--transition-fast);
+}
+
+.detail-back:hover {
+    color: var(--text-bright);
+}
+
+.detail-hero {
+    margin-bottom: 40px;
+}
+
+.detail-hero .project-tags {
+    margin-bottom: 16px;
+}
+
+.detail-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: var(--text-bright);
+}
+
+.detail-lead {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 720px;
+    line-height: 1.7;
+}
+
+.detail-panel {
+    padding: 32px;
+    margin-bottom: 28px;
+}
+
+.detail-panel h2 {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--neon-teal);
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+}
+
+.detail-panel p,
+.detail-panel li {
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.detail-panel ul {
+    list-style: none;
+    padding: 0;
+}
+
+.detail-panel li::before {
+    content: "▸ ";
+    color: var(--neon-purple);
+}
+
+.detail-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.detail-meta-row .metric-badge {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background: rgba(0, 242, 254, 0.08);
+    border: 1px solid var(--border-glass);
+    color: var(--neon-teal);
+}
+
+.detail-status {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    padding: 6px 14px;
+    border-radius: 4px;
+    background: rgba(158, 0, 255, 0.12);
+    border: 1px solid rgba(158, 0, 255, 0.35);
+    color: var(--neon-purple);
+    margin-bottom: 20px;
+}
+
+.detail-status--wip {
+    background: rgba(0, 245, 160, 0.1);
+    border-color: rgba(0, 245, 160, 0.35);
+    color: var(--neon-emerald);
+}
+
+.detail-external-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.detail-external-links a {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--neon-purple);
+    text-decoration: none;
+}
+
+.detail-external-links a:hover {
+    color: var(--neon-teal);
+}
+
+@media (max-width: 900px) {
+    .work-grid,
+    .work-grid--dual {
+        grid-template-columns: 1fr;
+    }
+}
