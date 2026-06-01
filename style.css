@@ -1698,7 +1698,8 @@ a:hover {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.work-link-card {
+.work-link-card,
+.work-info-card {
     position: relative;
     padding: 28px 32px;
     text-decoration: none;
@@ -1711,9 +1712,89 @@ a:hover {
     min-height: 200px;
 }
 
-.work-link-card:hover {
+.work-info-card {
+    cursor: default;
+}
+
+.work-link-card:hover,
+.work-info-card:hover {
     border-bottom-color: var(--neon-teal);
+}
+
+.work-link-card:hover {
     transform: translateY(-4px);
+}
+
+.project-card-full {
+    grid-column: 1 / -1;
+    margin-bottom: 24px;
+    min-height: auto;
+}
+
+.project-card-full .cyclegan-sandbox {
+    margin-top: 20px;
+}
+
+/* Calmer research section — less motion for readability */
+.research-section--calm .work-info-card:hover {
+    transform: none;
+}
+
+.research-section--calm .card-glow {
+    opacity: 0.35;
+}
+
+.cyclegan-sandbox--static .sandbox-display {
+    display: none;
+}
+
+.sandbox-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.compare-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.compare-label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+.compare-frame {
+    height: 140px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-glass);
+}
+
+.compare-frame svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.channel-link a {
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.channel-link a:hover {
+    color: var(--neon-teal);
+}
+
+.form-status-msg.error {
+    color: #ff6b6b;
+}
+
+@media (max-width: 600px) {
+    .sandbox-compare {
+        grid-template-columns: 1fr;
+    }
 }
 
 .work-card-title {
